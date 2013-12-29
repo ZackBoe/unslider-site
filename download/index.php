@@ -16,10 +16,10 @@ if($type) {
 	$contents = '';
 	
 	if($type !== 'standard') {
+		$contents = @file_get_contents($base . 'unslider.js') . "\n\n";
 		$base .= 'extras/';
 		$file .= '.' . $type;
 		
-		$contents = @file_get_contents($base . $file . '.js');
 	}
 	
 	$file = $base . $file . '.js';
@@ -33,6 +33,7 @@ if($type) {
 	$contents .= file_get_contents($file);
 	
 	if($mode == 'min') {
+		echo '/*unslider.com*/';
 		$contents = JSMin::minify($contents);
 	}
 	
