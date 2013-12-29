@@ -16,6 +16,7 @@ if($type) {
 	$contents = '';
 	
 	if($type !== 'standard') {
+		$base .= 'extras/';
 		$file .= '.' . $type;
 		
 		$contents = @file_get_contents($base . $file . '.js');
