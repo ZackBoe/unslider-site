@@ -14,7 +14,7 @@
 		
 		<!-- Here's where all the styles for Unslider slides go. Copy it from here.  -->
 		<!-- All the JavaScript is right before the </body> -->
-		<link rel="stylesheet" href="/unslider/unslider.css">		
+		<link rel="stylesheet" href="//localhost:1000/src/unslider.css">		
 	</head>
 	<body>
 		<header id="top">
@@ -123,11 +123,12 @@
 		<script src="//code.jquery.com/jquery-latest.min.js"></script>
 		
 		<!-- Our Unslider script, lets the bare minimum work. -->
-		<script src="unslider/unslider.js"></script>
+		<script src="//localhost:1000/src/unslider.js"></script>
 		
 		<!-- Optional extras: you don't need these for Unslider to work, but if you want infinite/fade/vertical extras, add 'em in. -->
-		<script src="/unslider/unslider.infinite.js"></script>
-		<script src="/unslider/unslider.fade.js"></script>
+		<script src="//localhost:1000/src/extras/unslider.infinite.js"></script>
+		<script src="//localhost:1000/src/extras/unslider.fade.js"></script>
+		<script src="//localhost:1000/src/extras/unslider.vertical.js"></script>
 		
 		<!-- Here's where I'm calling Unslider. You don't need to do all of these. -->
 		<script>
