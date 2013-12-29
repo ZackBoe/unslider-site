@@ -2,22 +2,39 @@
 
 include_once 'jsmin.php';
 
-$file = '../../src/unslider.js';
-$secondary = '../../src/unslider.fade.js';
+$type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
+$mode = filter_input(INPUT_GET, 'mode', FILTER_SANITIZE_STRING);
 
-var_dump($_GET);
+//  No options, no service.
+if(!$type) {
+	header('location: ../');
+}
 
-$contents = file_get_contents($file);
-
-echo strlen(JSMin::minify($contents));
-echo '<br>';
-echo strlen($contents);
-echo '<br>';
-
-$contents .= file_get_contents($secondary);
-
-echo round(strlen($contents) / 100) / 10 . 'kb';
-
-echo '<br>';
-
-echo round(strlen(JSMin::minify($contents)) / 100) / 10 . 'kb';
+if($type) {
+	$base = '../unslider/src/';
+	$file = 'unslider';
+	$contents = '';
+	
+	if($type !== 'standard') {
+		$file .= '.' . $type;
+		
+		$contents = @file_get_contents($base . $file . '.js');
+	}
+	
+	$file = $base . $file . '.js';
+	
+	if(!@file_exists($file)) {
+		header('location: /');		
+	}
+	
+	header('Content-Type: text/javascript');
+	
+	$contents .= file_get_contents($file);
+	
+	if($mode == 'min') {
+		$contents = JSMin::minify($contents);
+	}
+	
+	echo $contents;
+	exit;
+}

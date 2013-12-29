@@ -24,6 +24,13 @@ header, section, footer {
 	padding: 100px 0;
 }
 
+code {
+	position: relative;
+	top: -1px;
+	
+	font-size: 85%;
+}
+
 .btn {
 	display: block;
 	padding: 8px 25px;
@@ -182,15 +189,60 @@ header, section, footer {
 
 		
 /**
- *   Second panel
+ *   Install panel
  */
 #install {
-	background: #fff;
+	background: #35312e;
+	color: #8a817a;
+	
+	box-shadow: 0 2px 3px rgba(0,0,0,.15);
 }
+	#install h2 {
+		color: #fff;
+	}
+
+#options {
+	overflow: hidden;
+}
+	#options .text {
+		float: left;
+		width: 270px;
+	}
+	#options h2 {
+		padding-bottom: 20px;
+		line-height: 48px;
+	}
+	#options p {
+		padding: 10px 0 20px;
+		font-size: 17px;
+		line-height: 26px;
+	}
+		#options b {
+			font-weight: 500;
+		}
+	#options pre {
+		float: right;
+		width: 600px;
+		padding: 30px;
+		
+		background: #f6f3ef;
+		color: #7b6f5f;
+		
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+		border-radius: 6px;
+		
+		font: 14px/20px "Anonymous Pro", monospace;
+	}
+	#options .comment {
+		color: #afa796;
+	}
+	#options .val {
+		color: #db5e40;
+	}
 
 
 /**
- *   Third panel
+ *   Optional extras
  */
 #extras {
 	background: #f6f4f0;
@@ -261,4 +313,7 @@ header, section, footer {
 		#extras .unslider .halfling {
 			padding: 16px;
 			line-height: 24px;
+		}
+		#extras .unslider + p {
+			margin-bottom: 30px;
 		}

@@ -1,4 +1,6 @@
 RewriteEngine On
 
-RewriteRule ^([a-z]+)$ index.php?mode=$1 [L]
-RewriteRule ^([a-z]+).([a-z]{3,4})$ index.php?mode=$1&type=$2 [L]
+RewriteRule ^([a-z]+)$ index.php?type=$1 [L]
+RewriteRule ^([a-z]+)\.min$ index.php?type=$1&mode=min
+
+ErrorDocument 404 /download/index.php
