@@ -1,0 +1,4 @@
+[submodule "unslider"]
+	path = unslider
+	url = https://github.com/idiot/unslider.git
+	branch = dev
