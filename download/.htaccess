@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^([a-z]+)$ index.php?mode=$1 [L]
+RewriteRule ^([a-z]+).([a-z]{3,4})$ index.php?mode=$1&type=$2 [L]
