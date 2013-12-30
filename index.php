@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php function size($wut) { echo file_get_contents('http://localhost:1001/download/' . $wut . '.size'); } ?><!DOCTYPE html>
 <html class="no-js">
     <head>
         <meta charset="utf-8">
@@ -14,7 +14,7 @@
         
         <!-- Here's where all the styles for Unslider slides go. Copy it from here.  -->
         <!-- All the JavaScript is right before the </body> -->
-        <link rel="stylesheet" href="//localhost:1000/src/unslider.css">        
+        <link rel="stylesheet" href="/unslider/src/unslider.css">        
     </head>
     <body>
         <header id="top">
@@ -22,32 +22,28 @@
                 <nav>
                     <img id="logo" src="img/logo.png" alt="Unslider" title="Unslider" width="34" height="27"><sup>2.0</sup>
                     
-                    <a href="#download" class="download">Download <span>v1.1</span></a>
+                    <a href="#download" class="download">Download <span>v2.0</span></a>
                     <a href="#extras">Extras</a>
                     <a href="#options">Options</a>
                     <a href="#install">Install</a>
                 </nav>
                 
-                <div class="unslider unslider-demo">
-                    <ul>
-                        <li>
-                            <h1>A super-simple slider plugin for jQuery</h1>
-                            <p>Quick, easy, and responsive. Sets up in seconds.</p>
-                        </li>
-                        <li>
-                            <h1>A super-simple slider plugin for jQuery</h1>
-                            <p>Quick, easy, and responsive. Sets up in seconds.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                <h1>Unslider is a super-simple slider plugin for jQuery.</h1>
+                <p>Quick, easy, and responsive. Sets up in seconds.</p>
         </header>
         
         <section id="install">
             <div class="wrap">
                 <h2>Installing Unslider</h2>
                 
-                <p>Or not. Whatever.</p>
+                <div class="instructions">
+                	<ol role="navigation">
+                		<li class="active">1</li>
+                		<li>2</li>
+                		<li>3</li>
+                		<li>4</li>
+                	</ol>
+                </div>
             </div>
         </section>
         
@@ -67,13 +63,9 @@
     <span class="comment">//  The length of time to leave between moving slides (in ms)</span>
     interval: <span class="val">2000</span>,
     
-    <span class="comment">//  Callback function for a slide has finished sliding
-    //  parameters are:
-    //   - this, the current active slide
-    //   - "el", the base element"
-    //   - "index", the current active slide's index</span>
+    <span class="comment">//  Function that gets called when the slide’s done</span>
     complete: <span class="val">function(el, index) {}</span>,
-    
+
     <span class="comment">//  Add keyboard (L/R arrow) support?</span>
     keys: <span class="val">true</span>,
     
@@ -111,8 +103,8 @@
                         <p>Add <code>{ infinite: true }</code> to your Unslider’s options object to activate the Infinite Scroll extra.</p>
                         
                         <p class="download">
-                            <a class="btn subdued" href="/download/infinite">Unslider + Infinite <span>standard, 12kb</span></a>
-                            <a class="btn" href="/download/infinite.min">Unslider + Infinite <span>minified, 7kb</span></a>
+                            <a class="btn subdued" href="/download/infinite">Unslider + Infinite<span>standard, <?php size('infinite'); ?></span></a>
+                            <a class="btn" href="/download/infinite.min">Unslider + Infinite <span>minified, <?php size('infinite.min'); ?></span></a>
                         </p>
                     </li>
                     
@@ -132,8 +124,8 @@
                         <p>Add <code>{ fade: true }</code> to your Unslider’s options object to activate the Fade Transition extra.</p>
                         
                         <p class="download">
-                            <a class="btn subdued" href="/download/fade">Unslider + Fade <span>standard, 11kb</span></a>
-                            <a class="btn" href="/download/fade.min">Unslider + Fade <span>minified, 6.7kb</span></a>
+                            <a class="btn subdued" href="/download/fade">Unslider + Fade <span>standard, <?php size('fade'); ?></span></a>
+                            <a class="btn" href="/download/fade.min">Unslider + Fade <span>minified, <?php size('fade.min'); ?></span></a>
                         </p>
                     </li>
                     
@@ -153,8 +145,8 @@
                         <p>Add <code>{ vertical: true }</code> to your Unslider’s options object to activate the Infinite Scroll extra.</p>
 
                         <p class="download">
-                            <a class="btn subdued" href="/download/vertical">Unslider + Vertical <span>standard, 11kb</span></a>
-                            <a class="btn" href="/download/vertical.min">Unslider + Vertical <span>minified, 6.7kb</span></a>
+                            <a class="btn subdued" href="/download/vertical">Unslider + Vertical <span>standard, <?php size('vertical'); ?></span></a>
+                            <a class="btn" href="/download/vertical.min">Unslider + Vertical <span>minified, <?php size('vertical.min'); ?></span></a>
                         </p>
                     </li>
                 </ul>
@@ -162,25 +154,38 @@
         </section>
         
         <section id="download">
-            download me pl0z
+            <div class="wrap">
+            	<h2>Download Unslider</h2>
+            	
+	            <a class="btn" href="/download/standard">Download <span>standard, <?php size('standard'); ?></span></a>
+	            <a class="btn hilite" href="/download/standard.min">Download <span>minified, <?php size('standard.min'); ?></span></a>
+	            
+	            <aside class="social">
+	            	<h2>Unslider elsewhere</h2>
+	            	<a class="ss-octocat" href="http://github.com/idiot/unslider">Github</a>
+	            	<a class="ss-twitter" href="http://twitter.com/idiot">Twitter</a>
+	            	<a class="ss-reddit" href="http://reddit.com/http://unslider.com">Reddit</a>
+	            </aside>
+            </div>
         </section>
         
         <!-- Linking to jQuery -->
         <script src="//code.jquery.com/jquery-latest.min.js"></script>
         
         <!-- Our Unslider script, lets the bare minimum work. -->
-        <script src="//localhost:1000/src/unslider.js"></script>
+        <script src="/unslider/src/unslider.js"></script>
         
         <!-- Optional extras: you don't need these for Unslider to work, but if you want infinite/fade/vertical extras, add 'em in. -->
-        <script src="//localhost:1000/src/extras/unslider.infinite.js"></script>
-        <script src="//localhost:1000/src/extras/unslider.fade.js"></script>
-        <script src="//localhost:1000/src/extras/unslider.vertical.js"></script>
+        <script src="/unslider/src/extras/unslider.infinite.js"></script>
+        <script src="/unslider/src/extras/unslider.fade.js"></script>
+        <script src="/unslider/src/extras/unslider.vertical.js"></script>
         
         <!-- Here's where I'm calling Unslider. You don't need to do all of these. -->
         <script>
             $(function() {
+            	//  Not actually used on the site, but this is the default functionality
                 //  Default demo, no special features
-                $('.unslider-demo').unslider();
+                $('.slider').unslider();
                 
                 //  Infinite scroll
                 //  Only works if you've got the unslider.infinite.js extra on the page too
@@ -201,5 +206,8 @@
                 });
             });
         </script>
+        
+        <!-- Ignore this. -->
+        <script src="/css/social/ss-social.js"></script>
     </body>
 </html>

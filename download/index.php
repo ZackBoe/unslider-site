@@ -33,8 +33,12 @@ if($type) {
 	$contents .= file_get_contents($file);
 	
 	if($mode == 'min') {
-		echo '/*unslider.com*/';
-		$contents = JSMin::minify($contents);
+		$contents = '/*unslider.com*/' . JSMin::minify($contents);
+	}
+	
+	if($mode == 'size' or isset($_GET['size'])) {
+		//  round to 1dp
+		$contents = round(strlen($contents) / 100) / 10 . 'kb';
 	}
 	
 	echo $contents;

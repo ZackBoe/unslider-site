@@ -1,6 +1,12 @@
 RewriteEngine On
 
+# Standard download
 RewriteRule ^([a-z]+)$ index.php?type=$1 [L]
-RewriteRule ^([a-z]+)\.min$ index.php?type=$1&mode=min
 
+# TODO: fix double-grouping ([\.a-z]{3,4})
+RewriteRule ^([a-z]+)\.min$ index.php?type=$1&mode=min
+RewriteRule ^([a-z]+)\.size$ index.php?type=$1&mode=size
+RewriteRule ^([a-z]+)\.min.size$ index.php?type=$1&mode=min&size
+
+# In case someone tries to do anything fancy
 ErrorDocument 404 /download/index.php
