@@ -4,8 +4,7 @@
  *   General type stuff
  */
 body {
-	font: 15px/24px "Helvetica Neue", sans-serif;
-	
+	font: 16px/24px "Myriad Pro", "Helvetica Neue", sans-serif;
 	color: #7a7470;
 }
 
@@ -14,11 +13,11 @@ h1, h2, h3 {
 	color: #413c39;
 }
 	h1 {
-		font-size: 40px;
+		font-size: 44px;
 		line-height: 52px;
 	}
 	h2 {
-		font-size: 36px;
+		font-size: 40px;
 		line-height: 44px;
 	}
 
@@ -35,12 +34,12 @@ code {
 
 .btn {
 	display: block;
-	padding: 8px 25px;
+	padding: 10px 25px 8px;
 	margin: 15px 0;
 	
-	font-size: 13px;
+	font-size: 14px;
 	text-align: left;
-	font-weight: 500;
+	font-weight: 600;
 	
 	background: #f48642;
 	color: #fff;
@@ -50,7 +49,7 @@ code {
 	.btn span {
 		float: right;
 		
-		font-size: 11px;
+		font-size: 12px;
 		font-weight: normal;
 		opacity: .6;
 	}
@@ -109,12 +108,18 @@ code {
 	color: rgba(255,255,255,.6);
 	text-shadow: 0 1px 2px rgba(0,0,0,.1);
 	
-	box-shadow: inset 0 -2px 5px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.07);
+	box-shadow: inset 0 -2px 3px rgba(255,255,255,.1), 0 2px 3px rgba(0,0,0,.07);
 }
 	#top img, #top sup {
 		pointer-events: none;
 		-webkit-user-select: none;
 	}
+		#top img {
+			display: inline-block;
+			position: relative;
+			
+			-webkit-filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+		}
 		#top sup {
 			position: relative;
 			left: 12px;
@@ -123,6 +128,8 @@ code {
 			font-size: 12px;
 			font-weight: bold;
 			color: #ffa2c6;
+			
+			text-shadow: 0 1px 1px rgba(0,0,0,.1);
 		}
 	#top nav {
 		padding-bottom: 50px;
@@ -131,10 +138,10 @@ code {
 		#top nav a {
 			float: right;
 			margin-left: 30px;
-			padding: 7px 25px;
+			padding: 9px 25px 6px;
 			
 			font-weight: 500;
-			font-size: 13px;
+			font-size: 14px;
 			
 			color: rgba(255,255,255,.8);
 			background: rgba(0,0,0,.05);
@@ -158,7 +165,7 @@ code {
 			background: #fff;
 			color: #eb3f80;
 			
-			font-weight: bold;
+			font-weight: 600;
 		}
 			#top nav a.download span {
 				padding-left: 5px;
@@ -180,15 +187,20 @@ code {
 				-webkit-animation: pulse 1.5s infinite;
 				animation: pulse 1.5s infinite;
 			}
-	#top p {
-		padding-bottom: 60px;
-		
-		font-size: 19px;
-		line-height: 27px;	
+	#top p, #top h1 {
+		text-align: center;
 	}
+		#top p {
+			padding-bottom: 66px;
+			
+			font-size: 21px;
+			line-height: 22px;
+		}
 		#top h1 {
 			padding: 100px 0 8px;
 			color: #fff;
+			
+			text-shadow: 0 -1px 2px rgba(0,0,0,.2);
 		}
 		
 @-webkit-keyframes pulse {
@@ -210,54 +222,68 @@ code {
 	color: #8a817a;
 	
 	box-shadow: 0 2px 3px rgba(0,0,0,.15);
+	text-shadow: 0 1px 2px rgba(0,0,0,.5);
 }
 	#install h2 {
 		color: #fff;
-		text-shadow: 0 1px 2px rgba(0,0,0,.5);
+	}
+	#install h3 {
+		padding: 0 0 15px;
+		
+		font-size: 32px;
+		color: #fff;
+	}
+	#install .wrap {
+		position: relative;
 	}
 	#install .instructions {
 		position: relative;
 		margin: 60px 0 0;
-		padding: 150px 0;
 		
 		border-radius: 10px;
 		box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
 		
 		background: rgba(0,0,0,.2);
 	}
-		#install .instructions ol {
-			position: absolute;
-			right: 0;
-			top: -100px;
+		#install .instructions li {
+			position: relative;
+			padding: 60px;
+			
+			list-style: none;
 		}
-			#install .instructions ol li {
-				display: block;
-				float: left;
-				width: 40px;
-				height: 40px;
-				margin-left: 15px;
-				
-				font-size: 15px;
-				line-height: 40px;
-				font-weight: 500;
-				text-align: center;
-				
-				background: rgba(0,0,0,.1);
-				
-				border-radius: 20px;
-				cursor: pointer;
-				
-				-webkit-transition: background .2s, color .2s;
-				transition: background .2s, color .2s;
+	#install ol {
+		position: absolute;
+		right: 0;
+		top: 2px;
+	}
+		#install ol li {
+			display: block;
+			float: left;
+			width: 40px;
+			height: 40px;
+			margin-left: 15px;
+			
+			font-size: 15px;
+			line-height: 44px;
+			font-weight: 500;
+			text-align: center;
+			
+			background: rgba(0,0,0,.1);
+			
+			border-radius: 20px;
+			cursor: pointer;
+			
+			-webkit-transition: background .2s, color .2s;
+			transition: background .2s, color .2s;
+		}
+			#install ol li:hover {
+				background: rgba(0,0,0,.25);
+				color: #fff;
 			}
-				#install .instructions ol li:hover {
-					background: rgba(0,0,0,.25);
-					color: #fff;
-				}
-				#install .instructions ol li.active {
-					background: #f48642;
-					color: #fff;
-				}
+			#install ol li.active {
+				background: #f54f70;
+				color: #fff;
+			}
 	
 /**
  *   Options panel
@@ -300,6 +326,9 @@ code {
 	#options .val {
 		color: #db5e40;
 	}
+	#options .lite {
+		color: #c8c2b4;
+	}
 
 
 /**
@@ -338,7 +367,7 @@ code {
 		
 		color: #b6ac9e;
 
-		font-size: 13px;
+		font-size: 14px;
 		line-height: 36px;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -400,12 +429,10 @@ code {
 	}
 	#download .btn {
 		display: inline-block;
-		padding: 9px 25px 8px;
+		padding: 12px 25px 9px;
 		margin: 0 30px 0 0;
 		
 		position: relative;
-		
-		font-size: 13px;
 		
 		background: rgba(255,255,255,.7);
 		color: #e07532;
@@ -421,27 +448,26 @@ code {
 			display: inline-block;
 			float: none;
 			padding-left: 5px;
-			
-			font-size: 13px;
 		}
 	.social {
 		float: right;
 		
-		font: 500 13px/30px Helvetica Neue, sans-serif;
+		font: 600 14px/30px "Myriad Pro", sans-serif;
 	}
 		.social h2 {
 			margin-top: -44px;
 			margin-left: 30px;
 			
-			opacity: .5;
+			opacity: .7;
 		}
 		.social a {
 			display: inline-block;
-			padding: 6px 25px;
+			padding: 8px 25px 6px;
 			margin-left: 30px;
 			
-			color: #ffccad;
+			color: rgba(255,255,255,.75);
 			background: rgba(0,0,0,.03);
+			text-shadow: 0 1px 1px rgba(0,0,0,.1);
 			
 			border-radius: 50px;
 			
