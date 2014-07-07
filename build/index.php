@@ -1,6 +1,7 @@
 <?php 
 
-include_once 'jsmin.php';
+//include_once 'jsmin.php';
+include_once 'packer.php';
 
 $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
 $mode = filter_input(INPUT_GET, 'mode', FILTER_SANITIZE_STRING);
@@ -33,7 +34,8 @@ if($type) {
 	$contents .= file_get_contents($file);
 	
 	if($mode == 'min') {
-		$contents = '/*unslider.com*/' . JSMin::minify($contents);
+		$min = (new JavaScriptPacker($contents))->pack();
+		$contents = '/*unslider.com*/' . $min;//JSMin::minify($contents);
 	}
 	
 	if($mode == 'size' or isset($_GET['size'])) {
