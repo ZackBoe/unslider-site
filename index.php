@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/site.css">
 
-		<link rel="stylesheet" href="//localhost:1000/src/unslider.css">
+		<link rel="stylesheet" href="//localhost:10000/src/css/unslider.css">
 		
 		<!-- Fix viewport -->
 		<meta name="msapplication-window" content="width=device-width;height=device-height">
@@ -34,184 +34,174 @@
 	<body>
 	
 		<nav class="sidebar">
-			<img id="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAYAAAChS3wfAAABwklEQVR4Ae3awWoTURSH8bMKCCb0OZq8wkyrFSmudApufKc2iwR8F/EtgjOEBON2FDdJbCst128RIRyGCy4O1945gd+FJovw/7LpwBX9evX6zSmuUeMO4Ym7wxdc4xRy7PiPAWZ4RMjUIz7imQ4wwCeEnviMwXGAOULPzP4GGONBfbhEhRHkiRuhwlJtfMBYOG7UBw1OIJk5QaO23ghHrd6sIJmq1NZaOO7VmyNIpp6rrffCERTJmd7rATyAB/AAHkDxAP/GA1xggx94DzH2Fi1WKFIHuMQtwsF3iLEW4WCPszQB9HhgBTG2RohEMAwQH79FATFWYh+JYBAg/XjtZSSCUYD047WLSASTAO8MxltFuLQI0BqMt4rwzSLAz47SLyCJnXcEaC0CfMCveIT047HHlUUAMLb7C8//k/E7lBCDAAYRjMZbB4hFKCDGiu7v1uMNA0R+hXWif4XLVA9DOkKb4GGoTP04fIavaFFBjF2hxcbscThzHsADeAAP4AE8gAcA+n5BYtv3KzKLrktSdcaXpPSPPRWOScc1uQYVhhkMH6JC03FNbtLni5Jz+FVZvyzNoY0xRYPfGYzeYYEpJnrvH5hTmc6OXikKAAAAAElFTkSuQmCC" width="32" height="24" title="Unslider" alt="Unslider logo">
-			
-			<ul>
-				<li>
-					<b>Installing Unslider</b>
-					
-					<ul>
-						<li><a href="#downloading">Downloading</a></li>
-						<li><a href="#writing-html">Setting up HTML/CSS</a></li>
-						<li><a href="#basic-examples">Basic examples</a></li>
-					</ul>
-				</li>
-				
-				<li>
-					<b>Customising Unslider</b>
-					
-					<ul>
-						<li><a href="#slide-nav">Adding slide navigation</a></li>
-						<li><a href="#prev-next">Adding Previous/Next arrows</a></li>
-						<li><a href="#fullscreen">Making Unslider fullscreen</a></li>
-						<li><a href="#responsive">Making Unslider responsive</a></li>
-						<li><a href="#keyboard">Adding keyboard support</a></li>
-						<li><a href="#touch">Adding touch support</a></li>
-						<li><a href="#velocity-js">Adding <code>velocity.js</code> support</a></li>
-					</ul>
-				</li>
-				
-				<li>
-					<b><a href="#extras">Extras <em class="amp">&amp;</em> Plugins</a></b>
-					
-					<ul>
-						<li><a href="#infinite-scroll">Infinite scroll</a></li>
-						<li><a href="#fade-animation">Fade transition</a></li>
-						<li><a href="#vertical">Vertical scroll</a></li>
-					</ul>
-				</li>
-				
-				<li>
-					<b><a href="#options">Options <em class="amp">&amp;</em> Methods</a></b>
-					
-					<ul>
-						<li><a href="#options-list">All options</a></li>
-						<li><a href="#start-stop"><code>.start()</code> <em class="amp">&amp;</em> <code>.stop()</code></a></li>
-						<li><a href="#move"><code>.move(<em>to_index</em>)</code></a></li>
-						<li><a href="#destroy"><code>.destroy()</code></a></li>
-						<li><a href="#hooks"><code>.hook</code></a></li>
-					</ul>
-				</li>
-			</ul>
-			
+			<a href="#welcome">
+				<img id="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAQAAAALQrSUAAABf0lEQVR4Ae3YsWrCUBTG8TsJhSo+h/oKRq2LYxuhS99JHRT6LqVvIU0QpXZNSxe11RL5dzhcUsiS4yUJhXxncLp8P+HilWNsaDEh4EjeOfLChBZGRj5qzDlTZM48cmUBNZ4oI8/UBLCgrMwxhjYxkhU+DUzO08BnhSSmbZgiCWliCpomIZKpIUDiYwocH0lgOCFpFAq4RnIy2JiCB0kFqAAV4B8Ahmz54F5dcEvEmq4rYMQ3AO9qQATAgZ4LwNbDWg3YgCVcCkjqd3TVAI9DQtAD3OplblIEBcC1Xmb4l6AB3OnrMxBG2QGRvj4D4S074BOrHjgD+lhAlB3wwJcjIV1/YKy5hAOSg33c6/d4ikuoIKjqFYAUQX8Zu8lpqdcA0t9h4/BT7Lk8RpYQXfwYea7PcY9XInw1YEzENsNzXP0jqgAVoAKUvKDYlb2iWSZLqqDQJVWAZGboECMJ8annXl7HJ0QS0yl3Ubmg/FVt+ctq7LSZEfJD3tmzZEbH9v4C97CdQB41GrUAAAAASUVORK5CYII=" width="32" height="24" title="Unslider" alt="Unslider logo">
+			</a>
+
 			<div class="cta">
-				<a class="btn full download" href="#download">Download Unslider</a>
+				<a class="btn download" href="#download">Download Unslider</a>
 				<a class="btn github" href="//github.com/idiot/unslider">Github</a>
-				<a class="btn twitter" href="//twitter.com/idiot">Twitter</a>
 			</div>
 		</nav>
 		
 		<main>
-			<section id="welcome">
-				<article id="demo">
-					<div class="demo-slider">
-						<ul>
-							<li>
-								<h1>The jQuery slider that just slides.</h1>
-								<p>Unslider’s the fastest way to get a carousel up and running in your site.</p>
-							</li>
+			<ul>
+				<li id="welcome" data-nav="Welcome to Unslider">
+					<div class="wrap vertical">
+						<h1>Unslider is an ultra-simple<br>jQuery slider for your website.</h1>
+						
+						<div class="actions">
+							<div class="instructions">
+								<pre><span class="ghost">&lt;!-- The barebones HTML required for Unslider --&gt;</span>
+&lt;div class=&quot;banner&quot;&gt;
+    &lt;ul&gt;&lt;li&gt;This is my slider.&lt;/li&gt;&lt;li&gt;Pretty cool, huh?&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="ghost">&lt;!-- And the relevant JavaScript --&gt;</span>
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/to/unslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- Replace with the right path! --&gt;</span>
+&lt;script&gt;$(function() { $(&apos;.banner&apos;).unslider() })&lt;/script&gt;</pre>
+							</div>
 							
-							<li>
-								<h1>Fluid, flexible, fantastically minimal.</h1>
-								<p>Use any HTML in your slides, extend with CSS. You’re in full control.</p>
-							</li>
-							
-							<li>
-								<h1>Open-source.</h1>
-								<p>Everything to do with Unslider is <a href="//github.com/idiot/unslider">hosted on GitHub</a>.</p>
-							</li>
-						</ul>
-					</div>
-				</article>
-				
-				<article id="intro">
-					<div class="wrap">
-						<p><b>Unslider is a plugin for jQuery that allows you to set up a slider (or carousel) with minimal effort.</b> All you need to get started is a copy of jQuery, the Unslider plugin and any optional extras, and a page to put it in.</p>
-						<p>If you’re looking for a demo, there’s one above (and a few more littered on the page) and all the documentation is below. Enjoy!</p>
-					</div>
-				</article>
-			</section>
-			
-			<section id="installation">
-				<article id="downloading">
-					<div class="wrap">
-						<h2>Downloading Unslider</h2>
-						<p>Unslider requires jQuery — it just won’t work without it — so you’ll need to start off by linking to jQuery on your page (if you haven’t already). There’s two ways of linking jQuery:</p>
-						<p class="fyi">To check if your page has jQuery in, open up the <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">JavaScript console</a> and paste <code>!!window.jQuery</code> in. If it says <code>false</code>, you’ll need to link jQuery.</p>
-						
-						<ol>
-							<li>“Hotlinking” it from a <abbr title="content distribution network">CDN</abbr>, i.e <a href="https://developers.google.com/speed/libraries/devguide#jquery">Google</a>.</li>
-							<li><a href="http://jquery.com/download/">Downloading and including it locally</a> on the page.</li>
-						</ol>
-						
-						<p>Once you’ve downloaded jQuery, go ahead and click <a href="#download">the big green button on the left</a> to download Unslider, and reference your two new downloads on the page. They should (roughly) go like this in the markup:</p>
-						
-						<div class="progress-demo">
-							<ul>
-								<li data-title="Adding JavaScript/CSS">
-									<pre class="code-example"><span class="ghost">&lt;!DOCTYPE html&gt;
-&lt;head&gt;
-	&lt;meta charset="utf-8"&gt;
-	&lt;title&gt;Welcome to my Weiner Dog Website!&lt;/title&gt;</span>
-	&lt;link rel="stylesheet" href="<span class="adjustable">/path/to/unslider.css</span>"&gt;
-<span class="ghost">&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;I love Weiner Dogs!&lt;/h1&gt;
-	&lt;p&gt;What’s up with them stumpy legs, yo?&lt;/p&gt;</span>
-</pre>
-								</li>
+							<div class="download">
+								<p>To get started using Unslider, just download the repos:</p>
 								
-								<li data-title="Adding HTML in">
-									<pre class="code-example">muh htmls</pre>
-								</li>
-							</ul>
+								<a class="btn" href="#download">Download
+									<span>(version 2.0, 5kb)</span>
+								</a>
+								
+								<p>After more customisation or documentation? Try the navigation above (or below). It’s also a demo of Unslider. The whole site is!</p>
+							</div>
 						</div>
 					</div>
-				</article>
-			</section>
+				</li>
+				
+				<li id="setup" data-nav="Installing <span class='amp'>&amp;</span> Setting Up">
+					
+				</li>
+				
+				<li id="methods" data-nav="Methods <span class='amp'>&amp;</span> Options">
+					<div class="spaced"><div class="wrap">
+						<h1>Options.</h1>
+						
+						<dl>
+							<dt>autoplay <em>default: <code>false</code></em></dt>
+							<dd>Should the slider move by itself or only be triggered manually?</dd>
+
+							<dt>delay <em>default: <code>3000</code></em></dt>
+							<dd>If <code>autoplay</code> is set to true, how many milliseconds should pass between moving the slides?</dd>
+							
+							<dt>index <em>default: <code>'first'</code></em></dt>
+							<dd>If this is set to an integer, <code>'first'</code> or <code>'last'</code>, it'll set the default slide to that position rather than the first slide.</dd>
+
+							<dt>keys <em>default: <code>true</code></em></dt>
+							<dd>Do you want to add keyboard shortcut support to Unslider? This can be set to either <code>true</code>, <code>false</code>, or an options/keycode object, like so:
+
+								<pre>keys: {
+	prev: 37,
+	next: 39,
+	stop: 27 <span class="ghost">//  Example: pause when the Esc key is hit</span>
+}</pre>
+								This can be useful if you want to extend the functionality built-in to Unslider.
+							</dd>
+
+							<dt>nav <em>default: <code>true</code></em></dt>
+							<dd>Do you want to generate an automatic clickable navigation for each slide in your slider? You can over-ride what appears in each link by adding a <code>data-nav="nav title"</code> parameter to each slide element (replacing 'nav title' with whatever you'd like the title to be). If you want to add dot-navigation to a slide, simply include <code>unslider-dots.css</code> to your CSS file.</dd>
+
+							<dt>arrows <em>default: <code>true</code></em></dt>
+							<dd>
+								<p>Do you want to add left/right arrows to your slider? You can style these in your CSS by writing rules for <code>.unslider-arrow</code> (or alternatively you can change the HTML string to whatever you like and style that).</p>
+								<p>This can be set to either <code>true</code>, <code>false</code>, or an options object. If you set an options object, the default behaviour will be overwritten. The default object looks like this:</p>
+
+								<pre>arrows: {
+	<span class="ghost">//  Unslider default behaviour</span>
+	prev: '&lt;a class="unslider-arrow prev"&gt;Previous slide&lt;/a&gt;',
+	next: '&lt;a class="unslider-arrow next"&gt;Next slide&lt;/a&gt;',
+
+	<span class="ghost">//  Example: generate buttons to start/stop the slider autoplaying</span>
+	stop: '&lt;a class="unslider-pause" /&gt;',
+	start: '&lt;a class="unslider-play"&gt;Play&lt;/a&gt;'
+}</pre>
+								<p>This option is a bit of a misnomer, as you can set it to generate anything, not just arrows.</p>
+							</dd>
+
+							<dt>animation <em>default: <code>'horizontal'</code></em></dt>
+							<dd>How should Unslider animate each slide? Right now, there's three different animation types:
+								<ol>
+									<li><code>'horizontal'</code>, which moves the slides from left-to-right</li>
+									<li><code>'vertical'</code>, which moves the slides from top-to-bottom</li>
+									<li><code>'fade'</code>, which crossfades slides</li>
+								</ol>
+							</dd>
+
+							<dt>selectors</dt>
+							<dd>
+								<p>If you're not using an unordered list to display your slider, you'll need to add a <code>selectors</code> object referencing what elements Unslider should look for. The <b>container</b> should be the "conveyor belt" that gets moved, and the <b>slides</b> are - well - the slides.</p>
+
+								<pre>selectors: {
+	container: 'ul:first',
+	slides: 'li'
+}</pre>
+								<p><b>Note:</b> you'll probably also need to update/write custom CSS in order for Unslider to work. Check the source files for <code>unslider.less</code> to get a better idea of what needs styling.</p>
+							</dd>
+
+							<dt>animateHeight <em>default: <code>false</code></em></dt>
+							<dd>Should Unslider animate the height of the container to match the current slide's height? If so, set to <code>true</code>.</dd>
+
+							<dt>activeClass <em>default:<br><code>'unslider-active'</code></em></dt>
+							<dd>What class should Unslider set to the active slides and navigation items? Use this if you want to match your CSS.</dd>
+
+							<dt>lastActiveClass</dt>
+							<dd>
+								<p><b>This is only used in conjunction with <code>{animation: 'fade'}</code>.</b></p>
+								<p>In order to crossfade between slides properly, Unslider uses a "last-active" class to put the previously visible slide underneath. This class is the hook that should be used for this.</p>
+								<p>Check the source files for <code>unslider.less</code> to get a better idea of what needs styling.</p>
+								<p>By default, the class is <code>'.unslider-last-active'</code>, but you can set this option if you're going to style it yourself.</p>
+							</dd>
+						</dl>
+					</div></div>
+				</li>
+				
+				<li id="download" data-nav="Downloading, Compiling <span class='amp'>&amp;</span> Contributing">
+					<div class="wrap vertical">
+						<h1>Downloading Unslider</h1>
+					</h1>
+				</li>
+			</ul>
 		</main>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="jquery.touchSwipe.min.js"></script>
-		
-		<script src="//localhost:1000/src/unslider.js"></script>
-		<script src="//localhost:1000/src/extras/unslider.infinite.js"></script>
-		<script src="//localhost:1000/src/extras/unslider.fade.js"></script>
-		<script src="//localhost:1000/src/extras/unslider.vertical.js"></script>
-			
-        <script>
-            $(function() {
-            	//  Not actually used on the site, but this is the default functionality
-                //  Default demo, no special features
-                $('.demo-slider').unslider({
-                	speed: 750,
-                	delay: 4000,
-                	dots: true,
-                	keys: false
-                });
-                
-                //  Not actually used on the site, but this is the default functionality
-                //  Default demo, no special features
-                $('.progress-demo').unslider({
-                	autostart: false,
-                	dots: true,
-                	fade: true,
-                	speed: 200
-                });
-                
-                //  Infinite scroll
-                //  Only works if you've got the unslider.infinite.js extra on the page too
-                $('.unslider-infinite').unslider({infinite: true});
-
-                //  Fade transitions
-                //  Same as infinite and vertical, you need to have unslider.fade.js too
-                $('.unslider-fade').unslider({fade: true});
-                
-                //  Vertical scroll
-                //  You know it by now, doesn't work without unslider.vertical.js
-                $('.unslider-vertical').unslider({vertical: true});
-                
-                //  And this is smooth scroll stuff.
-                //  You can ignore this, it doesn't affect Unslider in any way.
-                $('a[href^="#"]').click(function() {
-                    return !$('html,body').animate({scrollTop: $($(this).attr('href')).position().top - 7}, 400);
-                });
-            });
-        </script>
-		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+		<script src="//localhost:10000/src/js/unslider.js"></script>
+					
+		<!-- WARNING! -->
+		<!-- Don't copy this! -->
 		<script>
-			<!-- This is specific to THIS WEBSITE ONLY. Don't copy this, it won't do anything! -->
-			$('.sidebar li:first').addClass('active').children('ul').slideDown().parents('li').siblings().children('ul').slideUp();
+			//  This is specific to THIS WEBSITE ONLY.
+			//  Don't copy this, it won't do anything and might break things!
+			var slider = $('main').unslider({ arrows: false });
+			
+			//  Click handler to automatically animate to a specific
+			//  panel based on ID
+			$('a[href^="#"]').click(function(e) {
+                e.preventDefault();
+
+                var $me = $(this), href = $me.attr('href');
+                var $target = $('.unslider-wrap ' + href);          
+
+                if($target.length) {
+                	slider.unslider('animate:' + $target.index());
+                }
+            });
+
+            if(location.hash) {
+            	$('a[href^="' + location.hash + '"]').trigger('click');
+            }
+
+            //  Add our super-cool scroll effect
+            $('.spaced').on('scroll', function() {
+            	var $me = $(this);
+            	$me[($me.scrollTop() ? 'add' : 'remove') + 'Class']('scrolled');
+            })
 		</script>
 	</body>
 </html>

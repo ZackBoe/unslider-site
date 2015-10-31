@@ -18,6 +18,14 @@ a {
 	margin: 0 auto;
 }
 
+.vertical {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	
+	transform: translateX(-50%) translateY(-50%);
+}
+
 img {
 	-ms-interpolation-mode: nearest-neighbor;
 
@@ -27,6 +35,6 @@ img {
 	image-rendering: crisp-edges;
 }
 
-html, body, .sidebar, main {
+html, body {
 	height: 100%;
 }
