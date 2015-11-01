@@ -29,10 +29,12 @@
 		
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" sizes="16x16 24x24 32x32 48x48">
 		<link rel="apple-touch-icon-precomposed" href="img/webclip.png" sizes="512x512">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+		<script src="//localhost:10000/src/js/unslider.js"></script>
 	</head>
 	
 	<body>
-	
 		<nav class="sidebar">
 			<a href="#welcome">
 				<img id="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAQAAAALQrSUAAABf0lEQVR4Ae3YsWrCUBTG8TsJhSo+h/oKRq2LYxuhS99JHRT6LqVvIU0QpXZNSxe11RL5dzhcUsiS4yUJhXxncLp8P+HilWNsaDEh4EjeOfLChBZGRj5qzDlTZM48cmUBNZ4oI8/UBLCgrMwxhjYxkhU+DUzO08BnhSSmbZgiCWliCpomIZKpIUDiYwocH0lgOCFpFAq4RnIy2JiCB0kFqAAV4B8Ahmz54F5dcEvEmq4rYMQ3AO9qQATAgZ4LwNbDWg3YgCVcCkjqd3TVAI9DQtAD3OplblIEBcC1Xmb4l6AB3OnrMxBG2QGRvj4D4S074BOrHjgD+lhAlB3wwJcjIV1/YKy5hAOSg33c6/d4ikuoIKjqFYAUQX8Zu8lpqdcA0t9h4/BT7Lk8RpYQXfwYea7PcY9XInw1YEzENsNzXP0jqgAVoAKUvKDYlb2iWSZLqqDQJVWAZGboECMJ8annXl7HJ0QS0yl3Ubmg/FVt+ctq7LSZEfJD3tmzZEbH9v4C97CdQB41GrUAAAAASUVORK5CYII=" width="32" height="24" title="Unslider" alt="Unslider logo">
@@ -75,6 +77,88 @@
 						</div>
 					</div>
 				</li>
+
+				<li id="demos" data-nav="Demos <span class='amp'>&amp;</span> Usage">
+					<div class="spaced">
+						<div class="wrap">
+							<div class="demo">
+								<h2>Default usage</h2>
+
+								<div class="default-slider">
+									<ul>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+									</ul>
+								</div>
+
+								<script>$('.default-slider').unslider();</script>
+							</div>
+
+							<div class="demo">
+								<h2>Automatic slider</h2>
+
+								<div class="automatic-slider">
+									<ul>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+									</ul>
+								</div>
+
+								<script>$('.automatic-slider').unslider({
+	autoplay: true
+});</script>
+							</div>
+
+							<div class="demo">
+								<h2>Automatic fade animation</h2>
+
+								<div class="fading-slider">
+									<ul>
+										<li><img src="img/cat1.jpg" alt="Cats!"></li>
+										<li><img src="img/cat2.jpg" alt="Cats!"></li>
+										<li><img src="img/cat3.jpg" alt="Cats!"></li>
+									</ul>
+								</div>
+
+								<script>$('.fading-slider').unslider({
+	animation: 'fade',
+	autoplay: true
+});</script>
+							</div>
+
+							<div class="demo">
+								<h2>Totally manual slider</h2>
+
+								<div class="manual-slider">
+									<ul>
+										<li>Slide 0 (first)</li>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+										<li>Slide 5 (last)</li>
+									</ul>
+								</div>
+
+								<input id="manual" placeholder="Type the slide number (or just first/last) here">
+
+								<script>$('.manual-slider').unslider({
+	keys: false,
+	arrows: false,
+	nav: false
+});
+
+$('#manual').on('keyup', function() {
+/**/$('.manual-slider').unslider('animate:' + $(this).val());
+});</script>
+							</div>
+						</div>
+					</div>
+				</li>
 				
 				<li id="setup" data-nav="Installing <span class='amp'>&amp;</span> Setting Up">
 					
@@ -82,7 +166,138 @@
 				
 				<li id="methods" data-nav="Methods <span class='amp'>&amp;</span> Options">
 					<div class="spaced"><div class="wrap">
-						<h1>Options.</h1>
+						<hgroup>
+							<h1>Extending Unslider</h1>
+							<p>Despite being small, Unslider is very flexible and extensible: you can change pretty much anything via options/settings, methods or callback events - all of which are documented below.</p>
+						</hgroup>
+
+						<h2>Methods</h2>
+						<p>Unslider has a handful of methods you can use to control your slider and two ways you can use these methods, as shown below.</p>
+						<pre><span class="ghost">//  Assuming we've got a variable set like this...
+var slider = $('.my-demo-slider').unslider();</span>
+
+<span class="ghost">// Method 1</span>
+slider.data('unslider').methodName();
+slider.data('unslider').methodName('arguments', 'go', 'here');
+
+<span class="ghost">// Method 2 (the shorthand version)</span>
+slider.unslider('methodName');
+slider.unslider('methodName:arguments,go,here');</pre>
+
+						<dl>
+							<dt>init <em>args: <code>options</code></em></dt>
+							<dd>Set everything up with the slider. This is called automatically when you set up <code>.unslider()</code> for the first time, but if there's layout problems or you want to re-initiate the slider for some reason, you can call it here. The <code>options</code> variable is an object (see below). <b>You can't call options with the shorthand <code>.unslider('init')</code> method.</b></dd>
+
+							<dt>calculateSlides</dt>
+							<dd>If a slide gets added or removed, you should call this otherwise things'll probably break.
+
+							<pre>var slider = $('.my-slider').unslider();
+
+<span class="ghost">// I don't like this last slide, let's get rid of it</span>
+slider.find('li:last').remove();
+
+<span class="ghost">// Let's recalculate Unslider so it knows what's going on</span>
+slider.unslider('calculateSlides');
+</pre>
+							</dd>
+
+							<dt>start</dt>
+							<dd>Make the slider move itself between slides. Will use the options object to determine the delay between slides.</dd>
+
+							<dt>stop</dt>
+							<dd>Stop the slider moving itself between slides. Will stop any auto-playing.</dd>
+
+							<dt>destroyKeys</dt>
+							<dd>Remove any keyboard shortcut handlers for the slider.</dd>
+
+							<dt>initKeys</dt>
+							<dd>Manually add keyboard shortcut support. Can be used after <code>destroyKeys</code> to restore keyboard shortcut support, or with <code>{keys: false}</code> in the options object to add support later on.</dd>
+
+							<dt>initSwipe</dt>
+							<dd>Set up swipe functionality manually (i.e if you want to defer loading). You can add it automatically by including <a href="http://stephband.info/jquery.event.swipe/">jquery.event.move and jquery.event.swipe</a> in your code. If you need to add it after page load, you can call initSwipe, like so:
+
+								<pre>$('.sliderman').unslider();
+
+<span class="ghost">//  Let's say we want to use $.getScript to load our scripts for some reason</span>
+var scripts = [
+	'http://stephband.info/jquery.event.move/js/jquery.event.move.js',
+	'http://stephband.info/jquery.event.swipe/js/jquery.event.swipe.js'
+];
+
+$.getScript(scripts[0]);
+
+<span class="ghost">//  Once our script is loaded, we can initSwipe to add swipe support</span>
+$.getScript(scripts[1], function() {
+	$('.sliderman').unslider('initSwipe');
+});
+</pre>
+							</dd>
+
+							<dt>destroySwipe</dt>
+							<dd>Remove swipe support. Does what it says on the tin.</dd>
+
+							<dt>setIndex <em>args: <code>to</code></em></dt>
+							<dd>
+								<p>Set the current index and navigation for Unslider. <b>This doesn't move the slider!</b> You can get some goofy results doing this - if you want to move the slider to a specific slide, I'd recommend you use <code>animate()</code> instead.</p>
+								<p>The argument <code>to</code> can be an integer with the index of the slide you want to set (remember: indexes start at zero!), or the strings <code>'first'</code> or <code>'last'</code> if you don't know how many slides there are.</p>
+							</dd>
+
+							<dt>animate <em>args: <code>to</code>, <code>dir</code></em></dt>
+							<dd>
+								<p>Move the slider to a specific slide, update any navigation and fire a <code>unslider.change</code> event. Use like so:</p>
+
+								<pre><span class="ghost">//  Our trusty slider!</span>
+var slider = $('.slider').unslider();
+
+<span class="ghost">//  Move to the first slide</span>
+slider.unslider('animate:first');
+
+<span class="ghost">//  Move to the third slide</span>
+<span class="ghost">//  Remember, slides are zero-indexed so 0 is first slide, 1 is second, etc.</span>
+slider.unslider('animate:2');
+
+<span class="ghost">//  Move to the last slide</span>
+slider.unslider('animate:last');
+
+<span class="ghost">//  Move to the last slide and add a direction</span>
+slider.unslider('animate:last,prev');</pre>
+
+								<p>The argument <code>to</code> <b>is required</b> and can be an integer with the index of the slide you want to set (remember: indexes start at zero!), or the strings <code>'first'</code> or <code>'last'</code> if you don't know how many slides there are.</p>
+								<p>The argument <code>dir</code> <b>is optional</b> and can either be the string <code>'prev'</code> or <code>'next'</code>. This doesn't do anything, yet.</p>
+							</dd>
+
+							<dt>next</dt>
+							<dd>Manually move to the next slide (or the first slide if you reach the last slide).</dd>
+
+							<dt>prev</dt>
+							<dd>Same thing as <code>.unslider('next')</code> but in the other direction. Moves the slider backwards manually or to the last slide if there's no more behind it.</dd>
+						</dl>
+
+						<h2>Events</h2>
+						<p>Unslider triggers some event listeners which might be handy for whatever reason, I guess.</p>
+
+						<pre><span class="ghost">//  Set up our slider to automatically move every second so we can see what's happening</span>
+var slider = $('.slider').unslider({ autoplay: true, delay: 1000 });
+
+<span class="ghost">//  When the slider has been set up, fire the event off.</span>
+slider.on('unslider.ready', function() {
+	alert('Slider is set up!');
+});
+
+<span class="ghost">//  Listen to slide changes</span>
+slider.on('unslider.change', function(event, index, slide) {
+	alert('Slide has been changed to ' + index);
+});</pre>
+
+						<h2>Options</h2>
+						<p>Unslider uses a standard jQuery plugin options object, which looks like the highlighted example below:</p>
+
+						<pre><span class="ghost">$('.my-demo-slider').unslider(</span>{
+	settingName: settingValue,
+	anotherSetting: anotherValue
+}<span class="ghost">);</span></pre>
+
+						<p>It's not required to have any of these options set — you can leave these all blank and they'll fall back to the defaults highlighted in the table below.</p>
 						
 						<dl>
 							<dt>autoplay <em>default: <code>false</code></em></dt>
@@ -156,7 +371,7 @@
 								<p><b>This is only used in conjunction with <code>{animation: 'fade'}</code>.</b></p>
 								<p>In order to crossfade between slides properly, Unslider uses a "last-active" class to put the previously visible slide underneath. This class is the hook that should be used for this.</p>
 								<p>Check the source files for <code>unslider.less</code> to get a better idea of what needs styling.</p>
-								<p>By default, the class is <code>'.unslider-last-active'</code>, but you can set this option if you're going to style it yourself.</p>
+								<p>By default, the class is <code>'.unslider-last-active'</code>, but you can set this option if you're going to style the fade animations yourself. Things will probably break. I warned you.</p>
 							</dd>
 						</dl>
 					</div></div>
@@ -165,43 +380,21 @@
 				<li id="download" data-nav="Downloading, Compiling <span class='amp'>&amp;</span> Contributing">
 					<div class="wrap vertical">
 						<h1>Downloading Unslider</h1>
+						<p>The latest version of Unslider is open-source and available through GitHub. Any hotlinked versions may be out of date — make sure to use the latest downloadable version!</p>
+						<a class="btn" href="//github.com/idiot/unslider/archive/master.zip">Download</a>
+						<a class="btn primary" href="//github.com/idiot/unslider">View on Github</a>
+						
+						<h2>Problems and contributing</h2>
+						<a class="btn secondary" href="//github.com/idiot/unslider/issues">Got any problems?</a>
+						<a class="btn secondary" href="//github.com/idiot/unslider/blob/master/contributing.md">Want to contribute?</a>
+						<a class="btn secondary" href="//gitter.im/idiot/unslider">Chat about Unslider</a>
 					</h1>
 				</li>
 			</ul>
 		</main>
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
-		<script src="//localhost:10000/src/js/unslider.js"></script>
 					
 		<!-- WARNING! -->
 		<!-- Don't copy this! -->
-		<script>
-			//  This is specific to THIS WEBSITE ONLY.
-			//  Don't copy this, it won't do anything and might break things!
-			var slider = $('main').unslider({ arrows: false });
-			
-			//  Click handler to automatically animate to a specific
-			//  panel based on ID
-			$('a[href^="#"]').click(function(e) {
-                e.preventDefault();
-
-                var $me = $(this), href = $me.attr('href');
-                var $target = $('.unslider-wrap ' + href);          
-
-                if($target.length) {
-                	slider.unslider('animate:' + $target.index());
-                }
-            });
-
-            if(location.hash) {
-            	$('a[href^="' + location.hash + '"]').trigger('click');
-            }
-
-            //  Add our super-cool scroll effect
-            $('.spaced').on('scroll', function() {
-            	var $me = $(this);
-            	$me[($me.scrollTop() ? 'add' : 'remove') + 'Class']('scrolled');
-            })
-		</script>
+		<script src="js/site.js"></script>
 	</body>
 </html>
