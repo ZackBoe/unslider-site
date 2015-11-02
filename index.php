@@ -30,7 +30,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" sizes="16x16 24x24 32x32 48x48">
 		<link rel="apple-touch-icon-precomposed" href="img/webclip.png" sizes="512x512">
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>	
 		<script src="//localhost:10000/src/js/unslider.js"></script>
 	</head>
 	
@@ -60,8 +60,8 @@
 &lt;/div&gt;
 
 <span class="ghost">&lt;!-- And the relevant JavaScript --&gt;</span>
-&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/path/to/unslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- Replace with the right path! --&gt;</span>
+&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/to/unslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- but with the right path! --&gt;</span>
 &lt;script&gt;$(function() { $(&apos;.banner&apos;).unslider() })&lt;/script&gt;</pre>
 							</div>
 							
@@ -381,8 +381,8 @@ slider.on('unslider.change', function(event, index, slide) {
 					<div class="wrap vertical">
 						<h1>Downloading Unslider</h1>
 						<p>The latest version of Unslider is open-source and available through GitHub. Any hotlinked versions may be out of date — make sure to use the latest downloadable version!</p>
-						<a class="btn" href="//github.com/idiot/unslider/archive/master.zip">Download</a>
-						<a class="btn primary" href="//github.com/idiot/unslider">View on Github</a>
+						<a class="btn big" href="//github.com/idiot/unslider/archive/master.zip">Download <span>unslider.zip, 5kb</span></a>
+						<a class="btn big primary" href="//github.com/idiot/unslider">View on Github</a>
 						
 						<h2>Problems and contributing</h2>
 						<a class="btn secondary" href="//github.com/idiot/unslider/issues">Got any problems?</a>
