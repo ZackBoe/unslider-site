@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600');
+
 ::selection {
 	background: rgba(0,0,0,.15);
 }
@@ -7,7 +9,7 @@ body {
 }
 
 body, input, textarea {
-	font: 15px/25px "Whitney HTF", Whitney, "Alegreya Sans", Lato, sans-serif;
+	font: 15px/25px "Open Sans", "Whitney HTF", Whitney, "Alegreya Sans", Lato, sans-serif;
 	text-shadow: 0 1px 3px rgba(0,0,0,.15);
 	
 	color: #787b80;
@@ -76,7 +78,7 @@ p a, main ul ol a, dl a {
 	color: #171b1f;
 	
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 600;
 	text-shadow: none;
 }
 	.btn:active {
