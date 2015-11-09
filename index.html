@@ -10,8 +10,9 @@
 		<!-- CSS and other pretties -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" href="css/mobile.css" media="(max-width: 640px)">
 
-		<link rel="stylesheet" href="/unslider/dist/css/unslider.css">
+		<link rel="stylesheet" href="http://unslider.com/unslider/dist/css/unslider.css">
 		
 		<!-- Fix viewport -->
 		<meta name="msapplication-window" content="width=device-width;height=device-height">
@@ -30,9 +31,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" sizes="16x16 24x24 32x32 48x48">
 		<link rel="apple-touch-icon-precomposed" href="img/webclip.png" sizes="512x512">
 
-		<script src="//code.jquery.com/jquery-2.1.4.js"></script>	
+		<script src="//code.jquery.com/jquery-2.1.4.js"></script>
 		<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
-		<script src="/unslider/dist/js/unslider-min.js"></script>
+		<script src="http://localhost:10000/src/js/unslider.js"></script>
 	</head>
 	
 	<body>
@@ -51,7 +52,7 @@
 			<ul>
 				<li id="welcome" data-nav="Welcome to Unslider">
 					<div class="wrap vertical">
-						<h1>Unslider is an ultra-simple<br>jQuery slider for your website.</h1>
+						<h1>Unslider is an ultra-simple <br>jQuery slider for your website.</h1>
 						
 						<div class="actions">
 							<div class="instructions">
@@ -246,6 +247,7 @@
 
 					<script>
 						$('.install-steps').unslider({
+							animateHeight: true,
 							arrows: true,
 							nav: function(slide, index) {
 								$('<em />').text(index).prependTo(this.find('h2'));

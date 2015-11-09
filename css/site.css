@@ -684,6 +684,9 @@ main {
 		#setup .unslider-arrow.prev {
 			left: 40px;
 		}
+	#setup .unslider-nav {
+		bottom: 13px;
+	}
 
 #methods {
 	background: #5dd19c;
