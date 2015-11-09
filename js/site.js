@@ -1,3 +1,7 @@
+var GoSquared = {
+    acct: 'GSN-396664-U'
+};
+
 $(function() {
     //  This is specific to THIS WEBSITE ONLY.
     //  Don't copy this, it won't do anything and might break things!

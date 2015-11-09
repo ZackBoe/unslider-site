@@ -5,13 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 				
 		<title>Unslider, the simplest carousel slider for jQuery</title>
-		<meta name="description" content="Here's a description of the site's page…">
+		<meta name="description" content="Unslider is a super-simple slider with swipe, slide, Velocity.js and fade animation support.">
 		
 		<!-- CSS and other pretties -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/site.css">
 
-		<link rel="stylesheet" href="//localhost:10000/dist/css/unslider.css">
+		<link rel="stylesheet" href="/unslider/dist/css/unslider.css">
 		
 		<!-- Fix viewport -->
 		<meta name="msapplication-window" content="width=device-width;height=device-height">
@@ -32,7 +32,7 @@
 
 		<script src="//code.jquery.com/jquery-2.1.4.js"></script>	
 		<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
-		<script src="//localhost:10000/src/js/unslider.js"></script>
+		<script src="/unslider/dist/js/unslider-min.js"></script>
 	</head>
 	
 	<body>
@@ -122,6 +122,9 @@
 										<li><img src="img/cat1.jpg" alt="Cats!"></li>
 										<li><img src="img/cat2.jpg" alt="Cats!"></li>
 										<li><img src="img/cat3.jpg" alt="Cats!"></li>
+										<li><img src="img/cat4.jpg" alt="Cats!"></li>
+										<li><img src="img/cat5.jpg" alt=">:)"></li>
+										<li><img src="img/cat6.jpg" alt="Cats!"></li>
 									</ul>
 								</div>
 
@@ -493,14 +496,6 @@ slider.on('unslider.change', function(event, index, slide) {
 
 							<dt>activeClass <em>default:<br><code>'unslider-active'</code></em></dt>
 							<dd>What class should Unslider set to the active slides and navigation items? Use this if you want to match your CSS.</dd>
-
-							<dt>lastActiveClass</dt>
-							<dd>
-								<p><b>This is only used in conjunction with <code>{animation: 'fade'}</code>.</b></p>
-								<p>In order to crossfade between slides properly, Unslider uses a "last-active" class to put the previously visible slide underneath. This class is the hook that should be used for this.</p>
-								<p>Check the source files for <code>unslider.less</code> to get a better idea of what needs styling.</p>
-								<p>By default, the class is <code>'.unslider-last-active'</code>, but you can set this option if you're going to style the fade animations yourself. Things will probably break. I warned you.</p>
-							</dd>
 						</dl>
 					</div></div>
 				</li>
@@ -522,7 +517,9 @@ slider.on('unslider.change', function(event, index, slide) {
 		</main>
 					
 		<!-- WARNING! -->
-		<!-- Don't copy this! -->
+		<!-- Please don't copy this! These scripts will only work on this site. -->
 		<script src="js/site.js"></script>
+		<script src="//d1l6p2sc9645hc.cloudfront.net/tracker.js"></script>
+		<script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-69889362-1","auto"),ga("send","pageview");</script>
 	</body>
 </html>
