@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/site.css">
 
-		<link rel="stylesheet" href="//localhost:10000/src/css/unslider.css">
+		<link rel="stylesheet" href="//localhost:10000/dist/css/unslider.css">
 		
 		<!-- Fix viewport -->
 		<meta name="msapplication-window" content="width=device-width;height=device-height">
@@ -30,7 +30,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" sizes="16x16 24x24 32x32 48x48">
 		<link rel="apple-touch-icon-precomposed" href="img/webclip.png" sizes="512x512">
 
-		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>	
+		<script src="//code.jquery.com/jquery-2.1.4.js"></script>	
+		<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 		<script src="//localhost:10000/src/js/unslider.js"></script>
 	</head>
 	
@@ -69,7 +70,7 @@
 								<p>To get started using Unslider, just download the repos:</p>
 								
 								<a class="btn" href="#download">Download
-									<span>(version 2.0, 5kb)</span>
+									<span>(version 2.0, 5.6kb)</span>
 								</a>
 								
 								<p>After more customisation or documentation? Try the navigation above (or below). It’s also a demo of Unslider. The whole site is!</p>
@@ -109,8 +110,8 @@
 								</div>
 
 								<script>$('.automatic-slider').unslider({
-	autoplay: true
-});</script>
+									autoplay: true
+								});</script>
 							</div>
 
 							<div class="demo">
@@ -125,9 +126,10 @@
 								</div>
 
 								<script>$('.fading-slider').unslider({
-	animation: 'fade',
-	autoplay: true
-});</script>
+									animation: 'fade',
+									autoplay: true,
+									arrows: false
+								});</script>
 							</div>
 
 							<div class="demo">
@@ -147,21 +149,108 @@
 								<input id="manual" placeholder="Type the slide number (or just first/last) here">
 
 								<script>$('.manual-slider').unslider({
-	keys: false,
-	arrows: false,
-	nav: false
-});
+									keys: false,
+									arrows: false,
+									nav: false
+								});
 
-$('#manual').on('keyup', function() {
-/**/$('.manual-slider').unslider('animate:' + $(this).val());
-});</script>
+								//  Delay is a custom function
+								$('#manual').on('keyup', function() {
+								/**/var value = $(this).val();
+									delay(function() {
+									/**/$('.manual-slider').unslider('animate:' + value)
+									/*e*/}, 100);
+								});</script>
+							</div>
+
+							<div class="demo">
+								<h2>Infinite slider</h2>
+
+								<div class="infinite-slider">
+									<ul>
+										<li>Slide 0 (first)</li>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+										<li>Slide 5 (last)</li>
+									</ul>
+								</div>
+
+								<script>$('.infinite-slider').unslider({
+									infinite: true
+								});</script>
 							</div>
 						</div>
 					</div>
 				</li>
 				
 				<li id="setup" data-nav="Installing <span class='amp'>&amp;</span> Setting Up">
-					
+					<div class="install-steps">
+						<ul>
+							<li>
+								<div class="wrap vertical">
+									<h2>Set up your HTML.</h2>
+									<p>Unslider uses a HTML element to wrap everything in, and puts all the slides inside that as an <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/ul">unordered list</a>.</p>
+									<p>You can put any HTML you'd like inside each slide. Here's an example:</p>
+
+									<pre>&lt;div class=&quot;my-slider&quot;&gt;
+&#x9;&lt;ul&gt;
+&#x9;&#x9;&lt;li&gt;My slide&lt;/li&gt;
+&#x9;&#x9;&lt;li&gt;Another slide&lt;/li&gt;
+&#x9;&#x9;&lt;li&gt;My last slide&lt;/li&gt;
+&#x9;&lt;/ul&gt;
+&lt;/div&gt;</pre>
+								</div>
+							</li>
+
+							<li>
+								<div class="wrap vertical">
+									<h2>Set up jQuery and Unslider.</h2>
+									<p>Add a reference to both jQuery and Unslider right before the closing <code>&lt;/body&gt;</code> tag - like below, but:</p>
+									<ol>
+										<li>Make sure jQuery is first! If not, you'll get an error.</li>
+										<li>Make sure you put the right path to Unslider. If not, Unslider just won't work.</li>
+									</ol>
+
+									<pre><span class="ghost">&lt;!-- There'll be a load of other stuff here --&gt;</span>
+	&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;/path/to/unslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- but with the right path! --&gt;</span>
+<b class="adjustable">&lt;/body&gt;</b></pre>
+								</div>
+							</li>
+
+							<li>
+								<div class="wrap vertical">
+									<h2>Tell Unslider what to slide.</h2>
+									<p>We're nearly there! All we need to do - whether in an external JavaScript file (if you've got one) or straight in your HTML file (it doesn't matter either way!) is tell Unslider what element we want to slide.</p>
+									<p>Since we added the HTML for a slider with a class of <code>my-slider</code>, we can use <code>$('.my-slider')</code> to target it.</p>
+
+									<pre><span class="ghost">	&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;/path/to/unslider.js&quot;&gt;&lt;/script&gt;</span>
+	&lt;script&gt;
+		jQuery(document).ready(function($) {
+			<b class="adjustable">$('.my-slider')</b>.unslider();
+		});
+	&lt;/script&gt;
+<span class="ghost">&lt;/body&gt;</span></pre>
+							
+									<p>You can add as many sliders as you like - and use any of the <a href="#methods">methods or options</a> to tweak your slider.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<script>
+						$('.install-steps').unslider({
+							arrows: true,
+							nav: function(slide, index) {
+								$('<em />').text(index).prependTo(this.find('h2'));
+
+								return index;
+							}
+						});
+					</script>
 				</li>
 				
 				<li id="methods" data-nav="Methods <span class='amp'>&amp;</span> Options">
@@ -170,6 +259,26 @@ $('#manual').on('keyup', function() {
 							<h1>Extending Unslider</h1>
 							<p>Despite being small, Unslider is very flexible and extensible: you can change pretty much anything via options/settings, methods or callback events - all of which are documented below.</p>
 						</hgroup>
+
+						<h2>Automatic support</h2>
+						<p>Unslider automatically supports a few different scripts, provided the <code>&lt;script&gt;</code> tag is referenced <b>before Unslider</b>.</p>
+
+						<dl>
+							<dt>Velocity.js <em><a href="http://julian.com/research/velocity/">visit site</a></em></dt>
+							<dd>
+								<p>A faster alternative to jQuery's <code>.animate()</code>. If you find your sliders are looking a bit sluggish, it's highly recommended to add Velocity, as it can make a marked improvement.</p>
+
+								<pre>&lt;script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"&gt;&lt;/script&gt;</pre>
+							</dd>
+
+							<dt>jquery.swipe.js <em><a href="//stephband.info/jquery.event.swipe">visit site</a></em></dt>
+							<dd>
+								<p>Add swipe support for mobile and desktop to your sliders. See the <code>initSwipe</code> and <code>destroySwipe</code> methods below for more info on how this works.</p>
+
+								<pre>&lt;script src="//stephband.info/jquery.event.move/js/jquery.event.move.js"&gt;&lt;/script&gt;
+&lt;script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"&lt;&gt;/script&gt;</pre>
+							</dd>
+						</dl>
 
 						<h2>Methods</h2>
 						<p>Unslider has a handful of methods you can use to control your slider and two ways you can use these methods, as shown below.</p>
@@ -321,7 +430,26 @@ slider.on('unslider.change', function(event, index, slide) {
 							</dd>
 
 							<dt>nav <em>default: <code>true</code></em></dt>
-							<dd>Do you want to generate an automatic clickable navigation for each slide in your slider? You can over-ride what appears in each link by adding a <code>data-nav="nav title"</code> parameter to each slide element (replacing 'nav title' with whatever you'd like the title to be). If you want to add dot-navigation to a slide, simply include <code>unslider-dots.css</code> to your CSS file.</dd>
+							<dd>
+								<p>Do you want to generate an automatic clickable navigation for each slide in your slider?</p>
+								<p>You can over-ride what appears in each link by adding a <code>data-nav="nav title"</code> parameter to each slide element (replacing 'nav title' with whatever you'd like the title to be).</p>
+								<p>If you want to add dot-navigation to a slide, simply include <code>unslider-dots.css</code> to your CSS file.</p>
+								<p><span class="new">New</span> You can also provide a function to calculate the slide label:</p>
+
+								<pre>nav: function(index, label) {
+	<span class="ghost">//  $(this) is the current index slide</span>
+	<span class="ghost">//  label is the current label</span>
+	<span class="ghost">//  index is the slide index, starting at 0</span>
+
+	<span class="ghost">//  On the third slide, append " third slide!"</span>
+	if(index === 2) {
+		return label + ' third slide!';
+	}
+
+	<span class="ghost">//  Only show the number</span>
+	return index + 1;
+}</pre>
+							</dd>
 
 							<dt>arrows <em>default: <code>true</code></em></dt>
 							<dd>
@@ -381,7 +509,7 @@ slider.on('unslider.change', function(event, index, slide) {
 					<div class="wrap vertical">
 						<h1>Downloading Unslider</h1>
 						<p>The latest version of Unslider is open-source and available through GitHub. Any hotlinked versions may be out of date — make sure to use the latest downloadable version!</p>
-						<a class="btn big" href="//github.com/idiot/unslider/archive/master.zip">Download <span>unslider.zip, 5kb</span></a>
+						<a class="btn big" href="//github.com/idiot/unslider/archive/master.zip">Download <span>unslider.min.js, 5.6kb</span></a>
 						<a class="btn big primary" href="//github.com/idiot/unslider">View on Github</a>
 						
 						<h2>Problems and contributing</h2>

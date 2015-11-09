@@ -20,12 +20,24 @@ $(function() {
     	$('a[href^="' + location.hash + '"]').trigger('click');
     }
 
+    //  If we're using Google Fonts as a fallback
+    //  make sure it scales properly, since font-size-adjust
+    //  has crappy support.
+    var $body = $('body');
+
+    if($body.detectFont() === 'Alegreya Sans') {
+        $body.addClass('uses-google-fonts');
+    }
+
+
     //  Add our super-cool scroll effect
     $('.spaced').on('scroll', function() {
     	var $me = $(this);
     	$me[($me.scrollTop() ? 'add' : 'remove') + 'Class']('scrolled');
     });
 
+
+    //  Auto-add our JS examples
     $('.demo').each(function() {
     	var $me = $(this);
         var $script = $me.find('script');
@@ -41,8 +53,8 @@ $(function() {
                     src[num] = '<span class="hilite">' + line.replace('/**/', '');
                 }
 
-                if(line === '});') {
-                    src[num] = '</span>' + line;
+                if(line === '});' || line.indexOf('/*e*/') === 0) {
+                    src[num] = '</span>' + line.replace('/*e*/', '');
                 }
             });
 
@@ -54,3 +66,14 @@ $(function() {
         $script.after($output.html(src));
     });
 });
+
+var delay = (function() {
+    var timer = 0;
+
+    return function(callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+
+$.fn.detectFont=function(){var d=$(this).css('font-family');var e=d.split(',');if(e.length==1)return $.trim(e[0]).replace(/['"]/g, '');var f=$(this);var g=null;var h='<span>wwwwwwwwwwwwwwwlllllllliiiiii</span>';var i={'font-size':'70px','display':'inline','visibility':'hidden'};e.forEach(function(a){var b=$(h).css('font-family',d).css(i).appendTo('body');var c=$(h).css('font-family',a).css(i).appendTo('body');if(b.width()==c.width())g=a;b.remove();c.remove()});return $.trim(g).replace(/['"]/g, '')};

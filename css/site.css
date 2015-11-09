@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans:400,300,500');
 
 ::selection {
 	background: rgba(0,0,0,.15);
@@ -9,11 +9,16 @@ body {
 }
 
 body, input, textarea {
-	font: 15px/25px "Open Sans", "Whitney HTF", Whitney, "Alegreya Sans", Lato, sans-serif;
+	font: 15px/25px "Whitney HTF", Whitney, "Alegreya Sans", Lato, sans-serif;
+	/*font-size-adjust: 0.475;*/
 	text-shadow: 0 1px 3px rgba(0,0,0,.15);
 	
 	color: #787b80;
 }
+	body.uses-google-fonts,
+	body.uses-google-fonts input, body.uses-google-fonts textarea {
+		font-size: 16px;
+	}
 
 code, pre, .mono {
 	font-size: 75%;
@@ -30,6 +35,7 @@ code, pre, .mono {
 		border-radius: 2px;
 	}
 	pre {
+		clear: both;
 		margin: 20px 0 30px;
 		padding: 16px 25px;
 		
@@ -39,17 +45,22 @@ code, pre, .mono {
 		background: #434449;
 		background: rgba(12,24,36,.2);
 
+		overflow-x: auto;
+
 		color: #fff;
 		font-size: 12px;
 		text-shadow: 0 1px 2px rgba(0,0,0,.1);
 	}
+		.uses-google-fonts pre {
+			font-size: 11.5px;
+		}
 		pre .ghost {
 			opacity: .4;
 		}
 		pre .adjustable {
 			font-weight: bold;
 			color: #fff;
-			background: #484951;
+			background: rgba(0,0,0,.2);
 		}
 		
 p a, main ul ol a, dl a {
@@ -67,6 +78,25 @@ p a, main ul ol a, dl a {
 		border-color: transparent;
 		background: rgba(255,255,255,.2);
 	}
+
+.new {
+	display: inline-block;
+    padding: 0 6px;
+    margin-right: 8px;
+
+	background: #fff96d;
+	color: #b59823;
+	text-shadow: 0 1px 0 rgba(255,255,255,.1);
+
+    border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+    font-size: 11px;
+    line-height: 18px;
+    text-shadow: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 .btn {
 	display: inline-block;
@@ -217,6 +247,10 @@ dl {
 
 			color: rgba(255,255,255,.6);
 		}
+			dt em a {
+				position: relative;
+				z-index: 10;
+			}
 			dt em + em {
 				margin-top: 24px;
 			}
@@ -245,12 +279,6 @@ dl {
 		dd:nth-child(4n) {
 			background: rgba(0,0,0,.02);
 		}
-	
-.unslider .unslider-wrap {
-	-webkit-transition-duration: .7s;
-	-ms-transition-duration: .7s;
-	transition-duration: .7s;
-}
 
 .spaced {
 	position: relative;
@@ -285,6 +313,57 @@ nav, .unslider-nav {
 
 		margin-left: 40px;
 	}
+	nav a[href="#welcome"] {
+		position: relative;
+	}
+		nav a[href="#welcome"]:before,
+		nav a[href="#welcome"]:after {
+			position: absolute;
+			transition: top .2s cubic-bezier(.42,0,.58,1), opacity .3s;
+
+			pointer-events: none;
+			opacity: 0;
+		}
+			nav a[href="#welcome"]:hover:before,
+			nav a[href="#welcome"]:hover:after {
+				opacity: .5;
+			}
+		nav a[href="#welcome"]:before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			margin-left: -8px;
+
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			border-bottom: 4px solid rgba(28,35,59,.43);
+		}
+			nav a[href="#welcome"]:hover:before {
+				top: 130%;
+			}
+		nav a[href="#welcome"]:after {
+			content: 'beta';
+			position: absolute;
+			left: 0;
+			right: 10px;
+			top: 123%;
+
+			padding: 3px 0;
+			border-radius: 3px;
+
+			font-size: 10px;
+			line-height: 12px;
+			font-weight: bold;
+			text-align: center;
+
+			color: #fff;
+			background: rgba(28,35,59,.35);
+			box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.05);
+		}
+			nav a[href="#welcome"]:hover:after {
+				top: 150%;
+			}
 	.unslider-nav li {
 		float: left;
 	}
@@ -309,6 +388,10 @@ nav, .unslider-nav {
 
 			transition: color .2s, background .2s;
 		}
+			.uses-google-fonts .unslider .unslider-nav li {
+				font-size: 14px;
+			}
+
 			body > .unslider > .unslider-nav li:first-child {
 				display: none;
 			}
@@ -438,8 +521,12 @@ main {
 #demos {
 	background: linear-gradient(20deg, #accd3a, #2bc792);
 }
+	#demos img {
+		width: 560px;
+		height: 350px;
+	}
 	#demos .fading-slider {
-		height: 400px;
+		height: 350px;
 	}
 	#demos .wrap {
 		width: 640px;
@@ -460,7 +547,7 @@ main {
 	#demos .unslider {
 		overflow: visible;
 	}
-	#demos .unslider-arrow {
+	#setup .unslider-arrow, #demos .unslider-arrow {
 		display: block;
 		width: 32px;
 		height: 32px;
@@ -482,10 +569,10 @@ main {
 		opacity: .6;
 		transition: opacity .2s;
 	}
-		#demos .unslider-arrow:hover {
+		#setup .unslider-arrow:hover, #demos .unslider-arrow:hover {
 			opacity: 1;
 		}
-		#demos .unslider-arrow.prev {
+		#setup .unslider-arrow.prev, #demos .unslider-arrow.prev {
 			left: -50px;
 			right: auto;
 			transform: rotate(-180deg);
@@ -507,7 +594,7 @@ main {
 		border-radius: 6px;
 		box-shadow: 0 4px 6px rgba(0,0,0,.1);
 	}
-	#demos .unslider-nav {
+	#demos .unslider-nav, #setup .unslider-nav {
 		position: absolute;
 		bottom: -35px;
 		left: 0;
@@ -516,11 +603,14 @@ main {
 
 		margin: 0;
 	}
-	#demos .unslider-nav ol {
+		#setup .unslider-nav {
+			bottom: 40px;
+		}
+	#demos .unslider-nav ol, #setup .unslider-nav ol {
 		list-style: none;
 		text-align: center;
 	}
-		#demos .unslider-nav ol li {
+		#demos .unslider-nav ol li, #setup .unslider-nav ol li {
 			display: inline-block;
 			float: none;
 			width: 6px;
@@ -537,7 +627,7 @@ main {
 
 			opacity: .4;
 		}
-		#demos .unslider-nav ol li.unslider-active {
+		#demos .unslider-nav ol li.unslider-active, #setup .unslider-nav ol li.unslider-active {
 			background: #fff;
 			cursor: default;
 			opacity: 1;
@@ -546,6 +636,49 @@ main {
 #setup {
 	background: linear-gradient(-20deg, #d23c39, #dca74a);
 }
+	#setup .unslider, #setup .install-steps, #setup .install-steps ul, #setup .install-steps ul li {
+		height: 100%;
+	}
+	#setup .install-steps {
+		width: 100%;
+	}
+		#setup .install-steps ul li {
+			position: relative;
+			width: 100%;
+		}
+	#setup .install-steps li ol {
+		margin: 15px 30px 25px;
+	}
+		#setup .install-steps li ol li {
+			float: none;
+			list-style: decimal;
+		}
+	#setup h2 em {
+		display: inline-block;
+		margin: -2px 20px 0 -56px;
+		width: 32px;
+		height: 32px;
+		vertical-align: middle;
+
+		font-size: 14px;
+		line-height: 32px;
+		font-weight: 600;
+		font-style: normal;
+		text-align: center;
+
+		background: rgba(255,255,255,.8);
+		color: #dca74a;
+		text-shadow: none;
+		box-shadow: 0 2px 3px rgba(0,0,0,.1);
+
+		border-radius: 32px;
+	}
+	#setup .unslider-arrow {
+		right: 40px;
+	}
+		#setup .unslider-arrow.prev {
+			left: 40px;
+		}
 
 #methods {
 	background: linear-gradient(20deg, #104a72, #5dd19c 75%, #fffae8);
