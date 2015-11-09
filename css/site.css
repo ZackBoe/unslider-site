@@ -450,6 +450,7 @@ main {
 		left: 50%;
 		bottom: 50px;
 		
+		-ms-transform: translateX(-50%);
 		transform: translateX(-50%);
 		list-style: none;
 	}
@@ -484,6 +485,7 @@ main {
 */
 	
 #welcome {
+	background: #4fb8d9;
 	background: linear-gradient(20deg, #6fe3e7, #4fb8d9 25%, #5648c1);
 }
 	#welcome h1 {
@@ -519,6 +521,7 @@ main {
 		}
 		
 #demos {
+	background: #accd3a;
 	background: linear-gradient(20deg, #accd3a, #2bc792);
 }
 	#demos img {
@@ -575,6 +578,7 @@ main {
 		#setup .unslider-arrow.prev, #demos .unslider-arrow.prev {
 			left: -50px;
 			right: auto;
+			-ms-transform: rotate(-180deg);
 			transform: rotate(-180deg);
 		}
 	#demos .demo {
@@ -634,6 +638,7 @@ main {
 		}
 
 #setup {
+	background: #d23c39;
 	background: linear-gradient(-20deg, #d23c39, #dca74a);
 }
 	#setup .unslider, #setup .install-steps, #setup .install-steps ul, #setup .install-steps ul li {
@@ -681,6 +686,7 @@ main {
 		}
 
 #methods {
+	background: #5dd19c;
 	background: linear-gradient(20deg, #104a72, #5dd19c 75%, #fffae8);
 }
 	#methods hgroup {
@@ -692,6 +698,7 @@ main {
 	}
 
 #download {
+	background: #dc2430;
 	background: linear-gradient(-20deg, #7b4397, #dc2430);
 }
 	#methods h1 + p, #download p {

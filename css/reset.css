@@ -13,6 +13,11 @@ a {
 	text-decoration: none;
 }
 
+img {
+	text-decoration: none;
+	border: 0;
+}
+
 .wrap {
 	width: 940px;
 	margin: 0 auto;
@@ -23,6 +28,7 @@ a {
 	left: 50%;
 	top: 50%;
 	
+	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
 
