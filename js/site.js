@@ -1,5 +1,5 @@
 var GoSquared = {
-    acct: 'GSN-396664-U'
+    acct: 'GSN-728806-M'
 };
 
 $(function() {
