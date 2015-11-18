@@ -226,6 +226,16 @@
 
 							<li>
 								<div class="wrap vertical">
+									<h2>Set up Unslider’s CSS.</h2>
+									<p>In order to display properly, Unslider needs some styles applied to it. You can easily add them by linking to the <code>dist/css/unslider.css</code> file. If you want styled dots as well, link to <code>dist/css/unslider-dots.css</code> as well.</p>
+									<p><span class="new">Note</span> By default, the colour of the styled dots is white. You can change this by compiling the LESS file and changing <code>variables.less</code> or manually editing anywhere it says <code>#fff</code>.</p>
+
+									<pre>&lt;link rel="stylesheet" href="<span class="ghost">/path/to/unslider</span>/dist/css/unslider.css"&gt;</pre>
+								</div>
+							</li>
+
+							<li>
+								<div class="wrap vertical">
 									<h2>Tell Unslider what to slide.</h2>
 									<p>We're nearly there! All we need to do - whether in an external JavaScript file (if you've got one) or straight in your HTML file (it doesn't matter either way!) is tell Unslider what element we want to slide.</p>
 									<p>Since we added the HTML for a slider with a class of <code>my-slider</code>, we can use <code>$('.my-slider')</code> to target it.</p>
@@ -416,6 +426,9 @@ slider.on('unslider.change', function(event, index, slide) {
 						<dl>
 							<dt>autoplay <em>default: <code>false</code></em></dt>
 							<dd>Should the slider move by itself or only be triggered manually?</dd>
+
+							<dt>speed <em>default: <code>750</code></em></dt>
+							<dd>How fast (in milliseconds) Unslider should animate between slides.</dd>
 
 							<dt>delay <em>default: <code>3000</code></em></dt>
 							<dd>If <code>autoplay</code> is set to true, how many milliseconds should pass between moving the slides?</dd>
