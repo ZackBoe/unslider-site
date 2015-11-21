@@ -71,13 +71,4 @@ $(function() {
     });
 });
 
-var delay = (function() {
-    var timer = 0;
-
-    return function(callback, ms) {
-        clearTimeout(timer);
-        timer = setTimeout(callback, ms);
-    };
-})();
-
 $.fn.detectFont=function(){var d=$(this).css('font-family');var e=d.split(',');if(e.length==1)return $.trim(e[0]).replace(/['"]/g, '');var f=$(this);var g=null;var h='<span>wwwwwwwwwwwwwwwlllllllliiiiii</span>';var i={'font-size':'70px','display':'inline','visibility':'hidden'};e.forEach(function(a){var b=$(h).css('font-family',d).css(i).appendTo('body');var c=$(h).css('font-family',a).css(i).appendTo('body');if(b.width()==c.width())g=a;b.remove();c.remove()});return $.trim(g).replace(/['"]/g, '')};
