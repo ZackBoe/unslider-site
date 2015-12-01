@@ -133,7 +133,8 @@
 
 								<script>$('.vertical-slider').unslider({
 									animation: 'vertical',
-									autoplay: true
+									autoplay: true,
+									infinite: true
 								});</script>
 							</div>
 
@@ -182,10 +183,7 @@
 
 								//  Delay is a custom function
 								$('#manual').on('keyup', function() {
-								/**/var value = $(this).val();
-									delay(function() {
-									/**/$('.manual-slider').unslider('animate:' + value)
-									/*e*/}, 100);
+									$('.manual-slider').unslider('animate:' + $(this).val());
 								});</script>
 							</div>
 
